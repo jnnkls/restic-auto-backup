@@ -97,7 +97,7 @@ touch "$LOGFILE"
 touch "$LOCKFILE"
 
 hc_log() {
-  if [ -z "${!BACKUP_HEALTHCHECK_ID+x}" ] || [ -z "${!BACKUP_HEALTHCHECK_ID}" ]; then
+  if [ -z "${BACKUP_HEALTHCHECK_ID}" ]; then
     return 1
   fi
 
