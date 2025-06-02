@@ -161,7 +161,7 @@ for rawpath in "${BACKUP_PATHS_ARRAY[@]}"; do
 
   restic -p "$BACKUP_PASSWORD_FILE" -v -r "$BACKUP_BACKEND:$BACKUP_REPO" backup \
   "$bpath" $RESTIC_ADDITIONALS --exclude-file="$BACKUP_EXCLUDES_FILE" \
-  2>&1 | tee -a "$LOGFILE"
+  2>&1 | tee "$LOGFILE"
 
   RESTIC_EXIT=${PIPESTATUS[0]}
   if [[ $RESTIC_EXIT -ne 0 ]]; then

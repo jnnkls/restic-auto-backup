@@ -57,8 +57,11 @@ crontab -e
 Add an entry like this to run daily at 3am:
 
 ```cron
-0 3 * * * /path/to/backup.sh >> /path/to/backup.log 2>&1
+0 3 * * * cd /path/to/backup && backup.sh > /dev/null
 ```
+
+> [!IMPORTANT]  
+> It's nessasary to `cd` into the working directory!
 
 ## Requirements
 
